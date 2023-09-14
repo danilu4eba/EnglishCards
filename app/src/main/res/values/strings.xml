@@ -7,4 +7,6 @@
     <string name="library">library</string>
     <string name="settings">settings</string>
     <string name="btn_review">btn_review</string>
+    <string name="first_word">First word</string>
+    <string name="translate">Translate</string>
 </resources>
