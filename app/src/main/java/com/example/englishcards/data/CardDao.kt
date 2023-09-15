@@ -7,8 +7,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
-
-class CardDao {
     @Dao
     interface CardDao {
 
@@ -16,12 +14,11 @@ class CardDao {
         fun getTasks(): Flow<List<Cards>>
 
         @Insert(onConflict = OnConflictStrategy.REPLACE)
-        suspend fun insert(task: Cards)
+        suspend fun insert(cards: Cards)
 
         @Update
-        suspend fun update(task: Cards)
+        suspend fun update(cards: Cards)
 
         @Delete
-        suspend fun delete(task: Cards)
+        suspend fun delete(cards: Cards)
     }
-}
