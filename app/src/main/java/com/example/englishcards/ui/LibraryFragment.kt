@@ -1,24 +1,33 @@
 package com.example.englishcards.ui
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.englishcards.CardViewModel
-import com.example.englishcards.R
+import com.example.englishcards.base.BaseFragment
+import com.example.englishcards.databinding.FragmentLibraryBinding
+import com.example.englishcards.ui.adapter.CardAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("UNREACHABLE_CODE")
 @AndroidEntryPoint
-class LibraryFragment : Fragment(R.layout.fragment_library) {
+class LibraryFragment : BaseFragment<FragmentLibraryBinding>() {
     private val viewModel: CardViewModel by viewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_library, container, false)
+    override fun inflateViewBinding(): FragmentLibraryBinding {
+        return FragmentLibraryBinding.inflate(layoutInflater)
+        val cardAdapter = CardAdapter()
+        binding.apply {
+            recyclerViewCards.apply {
+                adapter = cardAdapter
+                layoutManager = LinearLayoutManager(requireContext())
+                setHasFixedSize(true)
+            }
+        }
+        viewModel.cards.observe(viewLifecycleOwner) {
+            cardAdapter.submitList(it)
+        }
+
     }
 }
+
+

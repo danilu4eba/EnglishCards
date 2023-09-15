@@ -61,6 +61,8 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
 
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+
 }
 // Allow references to generated code
 kapt {

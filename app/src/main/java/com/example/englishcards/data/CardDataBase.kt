@@ -10,7 +10,7 @@ import javax.inject.Inject
 import javax.inject.Provider
 
 @Database(entities = [Cards::class], version = 1)
-abstract class CardDataBase: RoomDatabase() {
+abstract class CardDataBase : RoomDatabase() {
     abstract fun cardDao(): CardDao
     class Callback @Inject constructor(
         private val database: Provider<CardDataBase>,
@@ -24,6 +24,11 @@ abstract class CardDataBase: RoomDatabase() {
 
             applicationScope.launch {
                 dao.insert(Cards("table", "стол", 0))
+                dao.insert(Cards("table", "стол", 1))
+                dao.insert(Cards("table", "стол", 2))
+                dao.insert(Cards("table", "стол", 3))
+                dao.insert(Cards("table", "стол", 4))
+                dao.insert(Cards("table", "стол", 5))
 
             }
         }
