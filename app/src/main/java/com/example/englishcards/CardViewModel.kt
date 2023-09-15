@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CardViewModel @Inject constructor(
-    private val cardDao: CardDao
+    cardDao: CardDao
 ): ViewModel(){
     val cards = cardDao.getCards().asLiveData()
 }

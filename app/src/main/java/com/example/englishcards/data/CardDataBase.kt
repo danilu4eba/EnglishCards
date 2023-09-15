@@ -1,5 +1,6 @@
 package com.example.englishcards.data
 
+import android.annotation.SuppressLint
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
@@ -17,12 +18,13 @@ abstract class CardDataBase : RoomDatabase() {
         @ApplicationScope private val applicationScope: CoroutineScope
     ) : RoomDatabase.Callback() {
 
+        @SuppressLint("SuspiciousIndentation")
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
 
             val dao = database.get().cardDao()
 
-            applicationScope.launch {
+                applicationScope.launch {
                 dao.insert(Cards("table", "стол", 0))
                 dao.insert(Cards("table", "стол", 1))
                 dao.insert(Cards("table", "стол", 2))

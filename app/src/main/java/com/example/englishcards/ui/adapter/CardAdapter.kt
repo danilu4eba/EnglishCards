@@ -8,26 +8,26 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.englishcards.data.Cards
 import com.example.englishcards.databinding.ItemCardBinding
 
-class CardAdapter : ListAdapter<Cards, CardAdapter.TasksViewHolder>(DiffCallback()) {
+class CardAdapter : ListAdapter<Cards, CardAdapter.CardViewHolder>(DiffCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TasksViewHolder {
-        val binding = ItemCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return TasksViewHolder(binding)
-    }
-
-    override fun onBindViewHolder(holder: TasksViewHolder, position: Int) {
-        val currentItem = getItem(position)
-        holder.bind(currentItem)
-    }
-
-    class TasksViewHolder(private val binding: ItemCardBinding) : RecyclerView.ViewHolder(binding.root) {
-
+    class CardViewHolder(private val binding: ItemCardBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(cards: Cards) {
             binding.apply {
                 tvFirstWord.text = cards.firstWord
                 tvTranslate.text = cards.translate
             }
         }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
+        val binding = ItemCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CardViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
+        val currentItem = getItem(position)
+        holder.bind(currentItem)
     }
 
     class DiffCallback : DiffUtil.ItemCallback<Cards>() {

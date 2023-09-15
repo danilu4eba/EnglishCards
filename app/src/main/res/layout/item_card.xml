@@ -17,6 +17,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp"
-        android:text="@string/first_word"/>
+        android:text="@string/translate"/>
 
 </LinearLayout>

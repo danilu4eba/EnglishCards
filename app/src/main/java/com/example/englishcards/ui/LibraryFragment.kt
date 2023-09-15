@@ -16,7 +16,9 @@ class LibraryFragment : BaseFragment<FragmentLibraryBinding>() {
     override fun inflateViewBinding(): FragmentLibraryBinding {
         return FragmentLibraryBinding.inflate(layoutInflater)
         val cardAdapter = CardAdapter()
-        binding.apply {
+        val binding = view?.let { FragmentLibraryBinding.bind(it) }
+
+        binding?.apply {
             recyclerViewCards.apply {
                 adapter = cardAdapter
                 layoutManager = LinearLayoutManager(requireContext())
@@ -26,7 +28,6 @@ class LibraryFragment : BaseFragment<FragmentLibraryBinding>() {
         viewModel.cards.observe(viewLifecycleOwner) {
             cardAdapter.submitList(it)
         }
-
     }
 }
 
