@@ -17,9 +17,6 @@ class NoteRepositoryImpl @Inject constructor(
     override suspend fun get(id: Int): Note? =
         db.get(id)?.toNote()
 
-    override suspend fun getNotesWithRelevantCards(currentTime: Long): List<Note> {
-        TODO("Not yet implemented")
-    }
 
     override suspend fun deleteByIndexes(ids: Set<Int>) {
         TODO("Not yet implemented")
