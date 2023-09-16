@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">EnglishCards</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="review">review</string>
+    <string name="search">search</string>
+    <string name="library">library</string>
+    <string name="settings">settings</string>
+    <string name="btn_review">btn_review</string>
+    <string name="first_word">First word</string>
+    <string name="translate">Translate</string>
 </resources>
