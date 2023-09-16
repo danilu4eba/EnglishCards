@@ -1,4 +1,4 @@
-package com.example.englishcards.data
+package com.example.englishcards.data.model
 
 import android.os.Parcelable
 import androidx.room.PrimaryKey

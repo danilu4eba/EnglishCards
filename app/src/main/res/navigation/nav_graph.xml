@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.englishcards.ui.HomeFragment"
+        android:name="com.example.englishcards.ui.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_homeFragment_to_reviewFragment"
@@ -15,22 +15,22 @@
     </fragment>
     <fragment
         android:id="@+id/libraryFragment"
-        android:name="com.example.englishcards.ui.LibraryFragment"
+        android:name="com.example.englishcards.ui.library.LibraryFragment"
         android:label="fragment_library"
         tools:layout="@layout/fragment_library" />
     <fragment
         android:id="@+id/reviewFragment"
-        android:name="com.example.englishcards.ui.ReviewFragment"
+        android:name="com.example.englishcards.ui.review.ReviewFragment"
         android:label="fragment_review"
         tools:layout="@layout/fragment_review" />
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.englishcards.ui.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
-    <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.englishcards.ui.SettingsFragment"
+        android:name="com.example.englishcards.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="com.example.englishcards.ui.AddCard.AddCardFragment"
+        android:label="fragment_add_card"
+        tools:layout="@layout/fragment_add_card" />
 </navigation>

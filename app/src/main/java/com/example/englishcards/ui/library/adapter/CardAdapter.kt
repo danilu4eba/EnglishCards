@@ -1,11 +1,11 @@
-package com.example.englishcards.ui.adapter
+package com.example.englishcards.ui.library.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.englishcards.data.Cards
+import com.example.englishcards.data.model.Cards
 import com.example.englishcards.databinding.ItemCardBinding
 
 class CardAdapter : ListAdapter<Cards, CardAdapter.CardViewHolder>(DiffCallback()) {
