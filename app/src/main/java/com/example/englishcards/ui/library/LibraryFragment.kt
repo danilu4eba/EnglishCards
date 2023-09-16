@@ -7,8 +7,7 @@ import com.example.englishcards.databinding.FragmentLibraryBinding
 import com.example.englishcards.ui.library.adapter.CardAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
-@Suppress("UNREACHABLE_CODE")
-@AndroidEntryPoint
+
 class LibraryFragment : BaseFragment<FragmentLibraryBinding>() {
     private val viewModel: CardViewModel by viewModels()
 
