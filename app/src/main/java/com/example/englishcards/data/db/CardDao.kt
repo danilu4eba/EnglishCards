@@ -1,14 +1,13 @@
 package com.example.englishcards.data.db
 
-import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Entity
 import androidx.room.Insert
-import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.example.englishcards.data.model.Cards
 import kotlinx.coroutines.flow.Flow
+
 @Entity
 interface CardDao {
     @Query("SELECT * FROM cards_table ORDER BY id DESC")
@@ -34,7 +33,6 @@ interface CardDao {
 
     @Delete
     suspend fun delete(card: Cards)
-
 
 
 }

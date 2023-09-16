@@ -8,8 +8,6 @@ interface NoteRepository {
 
     suspend fun get(id: Int): Note?
 
-    suspend fun getNotesWithRelevantCards(currentTime: Long): List<Note>
-
     suspend fun deleteByIndexes(ids: Set<Int>)
     suspend fun deleteAll()
 
